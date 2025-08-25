@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='https://www.ugr.es/en'>University of Granada</a>.
+subtitle: PhD Student at the <a href='https://www.ugr.es/en'>University of Granada</a>.
 
 profile:
   align: right
@@ -27,8 +27,12 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I’m Daniel Martin, a PhD student at the University of Granada. I hold a Master’s degree in Applied Ethics from the Complutense University of Madrid and a Bachelor’s degree in Philosophy from the University of Granada. My research focuses on how people form and justify their moral preferences, particularly regarding animals, plants, and other entities.
+Hello! My name is Daniel Martín, and I am currently pursuing a PhD in Philosophy at the University of Granada. I began my academic journey with a Bachelor's degree in Philosophy at this same university, followed by a Master's degree in Applied Ethics at the Complutense University of Madrid. I have also recently completed a Master's degree in Teaching, and I am simultaneously pursuing a degree in Psychology at the UNED.
 
-I also investigate how perceptions of normality, reasonableness, and social norms influence moral prioritization and decision-making.
+My research focuses on the intersection between philosophy and moral psychology. In particular, I examine the psychology of everyday moral decisions, whether towards other people, animals, or the environment.
 
-Combining insights from philosophy and psychology, I use experimental methods to understand the processes behind moral reasoning, with the goal of informing ethical discussions in climate change and human-animal relationships.
+To explore these issues, I combine, in collaboration with my research team, philosophical analysis with experimental methods.  For instance, we are currently studying how people understand the concepts of 'normal' and 'reasonable', and how these perceptions can be influenced by descriptive influences, what is, and by prescriptive ones, what ought to be. Such studies would help us to understand how social and legal patterns of moral justification can change.
+
+In another line of work, we analyse the moral priority that people attribute to different animals and plants. Using a simple behavioural task, we investigate the extent to which we feel morally close to different living beings, and the implications these perceptions have for dignity, rights, and duties of care and attention.
+
+Besides research, I enjoy spending time outdoors, cooking, walking with my dogs, and occasionally going on hiking trips. I believe that these activities, along with contact with people and nature, also feed into my understanding of philosophy and moral psychology.
