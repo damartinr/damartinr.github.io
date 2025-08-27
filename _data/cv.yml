@@ -2,25 +2,34 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Antonio Daniel Martín Ruiz
     - name: Date of Birth
-      value: 14th March 1879
+      value: 1st August 1999
     - name: Languages
-      value: English, German
+      value: Spanish (native), English (fluent), German (basic)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: PhD in Philosophy
+      institution: University of Granada, Granada, Spain
+      year: 2024 - present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+        - Thesis: "Scope and Priority in Moral Judgement: an Experimental Approach to the Relevance of Animals and Nature in Decision Making"
+        - Supervisor: Ivar R. Hannikainen (University of Granada)
+    - title: Bachelor's Degree in Psychology
+      institution: Universidad de Educación a Distancia, UNED, Spain
+      year: 2019 - present
+    - title: Master's Degree in Applied Ethics
+      institution: Universidad Complutense de Madrid, Madrid, Spain
+      year: 2022 - 2023
+      description:
+        - Final Project: "The Moral Relevance of Climate Change: to What Extent are We Prepared to Take Action?"
+        - Supervisor: Blanca Rodriguez López (Universidad Complutense de Madrid)
+
+
+
+
     - title: Federal teaching diploma
       institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
       year: 1900
