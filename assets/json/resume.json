@@ -1,11 +1,11 @@
 {
   "basics": {
     "name": "Antonio Daniel Martín Ruiz",
-    "label": "PhD Candidate in Philosophy",
-    "image": "",
+    "label": "PhD student in Philosophy",
+    "image": "assets/img/IMG_4829.png",
     "email": "damartin@ugr.es",
     "url": "https://damartinr.github.io/",
-    "summary": "PhD student researching moral judgment, animal ethics, and environmental decision making.",
+    "summary": "",
     "location": {
       "city": "Granada",
       "countryCode": "ES",
@@ -26,21 +26,10 @@
       "url": "https://www.mscilab.com",
       "startDate": "31/01/2024",
       "endDate": "present",
-      "summary": "Conducting research on moral judgment, animal ethics, and environmental decision making.",
-      "highlights": ["Moral Psychology", "Experimental Philosophy"]
+      "summary": "Moral Psychology, Experimental Philosophy, Animal Ethics, and Environmental Decision Making.",
+      "highlights": []
     }
-  ],
-  "volunteer": [
-    {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
+    
   ],
 "education": [
     {
@@ -90,13 +79,78 @@
       "endDate": "2022-07-01"     
     }
   ],
-  "awards": [
+  "publications": [
     {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "name": "The Brain Death Criterion in Light of Value-Based Disagreement Versus Biomedical Uncertainty",
+      "authors": ["<b>Daniel Martín</b>", "Golzalo Díaz-Cobacho", "Ivar R. Hannikainen"],
+      "publisher": "The American Journal of Bioethics",
+      "releaseDate": "2024-01-18",
+      "url": "https://doi.org/10.1080/15265161.2023.2278566"
+    },
+    {
+      "name": "Normality and the Treatment-Enhancement Distinction",
+      "authors": ["<b>Daniel Martín</b>", "Jon Rueda", "Brian D. Earp", "Ivar R. Hannikainen"],
+      "publisher": "Neuroethics",
+      "releaseDate": "2023-05-22",
+      "url": "https://doi.org/10.1080/15265161.2023.2278566"
+    }
+  ],
+  "events": [
+    {
+      "title": "Mapping the moral circle with choice and reaction time data",
+      "date": "2025-06-26",
+      "location": "Basel, Switzerland",
+      "organizer": "the University of Basel",
+      "event": "Experimental Philosophical Bioethics Summit 2025",
+      "slug": ""
+    },
+    {
+      "title": "Shifting Boundaries: How Identity Shapes the Moral Prioritization of Humans, Animals, and Others",
+      "date": "2025-07-03",
+      "location": "Edinburgh, UK",
+      "organizer": "the University of Edinburgh",
+      "event": "The PHAIR 2025 Conference",
+      "slug": ""
+    },
+    {
+      "title": "Practical reason: Frequency and Evaluation Effects on Judgments of Normality and Reasonableness",
+      "date": "2025-07-12",
+      "location": "Norwich, UK",
+      "organizer": "the University of East Anglia",
+      "event": "5th European Experimental Philosophy Conference",
+      "slug": ""
+    }, 
+    {
+      "title": "Razón práctica: Efectos de frecuencia y evaluación en los juicios de normalidad y razonabilidad",
+      "date": "2025-04-11",
+      "location": "Jaén, España",
+      "organizer": "la Universidad de Jaén",
+      "event": "XI Seminario de la Red Andaluza de Ética y filosofía Política",
+      "slug": ""
+    }, 
+       {
+      "title": "Nuevas consideraciones sobre el círculo moral: análisis experimental sobre la relevancia moral de humanos, animales y naturaleza",
+      "date": "2025-01-20",
+      "location": "Granada, España",
+      "organizer": "la Universidad de Granada",
+      "event": "Congreso internacional de la AEEFP - XXI Semana de la Ética y Filosofía Política",
+      "slug": ""
+    }, 
+       {
+      "title": "Scope and priority in moral judgement: an experimental approach to the relevance of  animals and nature in decision making",
+      "date": "2024-11-18",
+      "location": "Granada, Spain",
+      "organizer": "the University of Granada",
+      "event": "BIENN PROJECT II International Workshop",
+      "slug": ""
+    }, 
+       {
+      "title": "Attitudes Towards Artificial Moral Assistants",
+      "date": "2024-11-13",
+      "location": "Barcelona, Spain",
+      "organizer": "the University of Barcelona",
+      "event": " Inter-University Workshop on Mind, Morality, and Art: Experimental Philosophical Perspectives",
+      "slug": ""
     }
   ],
   "certificates": [
@@ -141,29 +195,6 @@
       "issuer": "Stanford University",
       "url": "https://example.com",
       "icon": "fa-solid fa-clipboard-check"
-    }
-  ],
-  "publications": [
-    {
-      "name": "The Brain Death Criterion in Light of Value-Based Disagreement Versus Biomedical Uncertainty",
-      "authors": ["<b>Daniel Martín</b>", "Golzalo Díaz-Cobacho", "Ivar R. Hannikainen"],
-      "publisher": "The American Journal of Bioethics",
-      "releaseDate": "2024-01-18",
-      "url": "https://doi.org/10.1080/15265161.2023.2278566"
-    },
-    {
-      "name": "Normality and the Treatment-Enhancement Distinction",
-      "summary": ["<b>Daniel Martín</b>", "Jon Rueda", "Brian D. Earp", "Ivar R. Hannikainen"],
-      "publisher": "Neuroethics",
-      "releaseDate": "2023-05-22",
-      "url": "https://doi.org/10.1080/15265161.2023.2278566"
-    },
-    {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
     }
   ],
   "skills": [
@@ -227,6 +258,28 @@
       "startDate": "2018-01-01",
       "endDate": "2018-01-01",
       "url": "https://example.com"
+    }
+  ], 
+
+  "volunteer": [
+    {
+      "organization": "People's Climate March",
+      "location": "Zurich, Switzerland",
+      "position": "Lead Organizer",
+      "url": "https://example.com",
+      "startDate": "2014-04-01",
+      "endDate": "2015-07-01",
+      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
+      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Nobel Prize in Physics",
+      "date": "1921-11-01",
+      "awarder": "Royal Swedish Academy of Sciences",
+      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
+      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
     }
   ]
 }

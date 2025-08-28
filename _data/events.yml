@@ -1,0 +1,11 @@
+- title: "Conference on AI"
+  date: "2025-09-12"
+  location: "Madrid, Spain"
+  organizer: "University of XYZ"
+  slug: "conference-on-ai"
+
+- title: "Workshop on Robotics"
+  date: "2025-11-02"
+  location: "Barcelona, Spain"
+  organizer: "TechLab"
+  slug: "workshop-on-robotics"
