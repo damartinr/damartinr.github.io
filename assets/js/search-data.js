@@ -34,6 +34,17 @@ ninja.data = [{
             window.location.href = "/blog/2025/summer_school/";
           
         },
+      },{id: "post-2025-bioxphi-summit-in-basel",
+        
+          title: "2025 BioXPhi Summit in Basel",
+        
+        description: "The 2025 edition of the Experimental philosophical bioethics (&quot;BioXPhi&quot;) Summit",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/basel2025/";
+          
+        },
       },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
