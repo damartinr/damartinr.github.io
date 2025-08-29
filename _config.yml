@@ -85,9 +85,9 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: My Everyday Moral Decisions # blog_name will be displayed in your blog page
+blog_name: Everyday Moral Work # blog_name will be displayed in your blog page
 blog_description: >
-  Here, in this blog, you can see all the things I've been doing, like conferences, attendances, summer schools, general webpages, and other things I consider relevant.
+  A space to document my academic activities: conferences, workshops, schools, and other events that contribute to my research in moral philosophy.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
