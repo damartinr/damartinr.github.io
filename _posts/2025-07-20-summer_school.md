@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EASP Summer School 2025
-date: 2025-08-29 15:00:00
+date: 2025-08-03 15:00:00
 description: 2025 Summer School of the European Association of Social Psychology, hosted at the University of Kent
 tags: psychology
 thumbnail: assets/img/summer_school2025/1.jpg
