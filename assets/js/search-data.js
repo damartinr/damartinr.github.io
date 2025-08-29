@@ -9,18 +9,25 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-cv",
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-cv",
           title: "cv",
           description: "Here you can find an overview of my academic and professional activities from recent years.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-aaaa",
+        },{id: "post-easp-summer-school-2025",
         
-          title: "aaaa",
+          title: "EASP Summer School 2025",
         
-        description: "an example of a blog post with some code",
+        description: "2025 Summer School of the European Association of Social Psychology, hosted at the University of Kent",
         section: "Posts",
         handler: () => {
           
