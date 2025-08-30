@@ -24,7 +24,7 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: # leave blank to include all the blog posts
+  limit: 3 # leave blank to include all the blog posts
 ---
 
 Hello! My name is Daniel Martín, and I am currently pursuing a PhD in Philosophy at the <a href='https://www.ugr.es/en'>University of Granada</a>. I began my academic journey with a <a href='https://www.ugr.es/en/study/undergraduate/bachelors-degree-philosophy'>Bachelor's degree in Philosophy</a> at this same university, followed by a Master's degree in  <a href='https://venalacomplu.ucm.es/estudios/master-eticaaplicada'>Applied Ethics at the Complutense University of Madrid</a>. I have also recently completed a <a href='https://masteres.ugr.es/profesorado/'>Master's degree in Teaching</a>, and I am simultaneously pursuing a <a href='https://www.uned.es/universidad/inicio/en/estudios/grados/grado-en-psicologia.html?idContenido=1'>degree in Psychology at the UNED</a>.

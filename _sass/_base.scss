@@ -1438,3 +1438,8 @@ figure.cover {
   object-fit: cover;   /* crop without deformation */
   border-radius: 8px;  /* optional: rounded corners */
 }
+
+.latest-posts-scroll {
+  max-height: 50vh;
+  overflow-y: auto;
+}
