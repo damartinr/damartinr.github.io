@@ -34,6 +34,28 @@ ninja.data = [{
             window.location.href = "/blog/2025/summer_school/";
           
         },
+      },{id: "post-5th-euro-xphi-conference-in-norwich",
+        
+          title: "5th Euro Xphi Conference in Norwich",
+        
+        description: "The 5th edition of the European Experimental Philosophy Conference",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/norwich/";
+          
+        },
+      },{id: "post-phair-2025-in-edinburgh",
+        
+          title: "PHAIR  2025 in Edinburgh",
+        
+        description: "The PHAIR 2025 Animal Advocacy Conference in Edinburgh",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/edinburgh/";
+          
+        },
       },{id: "post-2025-bioxphi-summit-in-basel",
         
           title: "2025 BioXPhi Summit in Basel",
