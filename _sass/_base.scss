@@ -1431,3 +1431,10 @@ figure.cover {
   display: block;     /* required for margin auto to work */
   margin: 0 auto;   
   }
+
+.post-thumbnail {
+  width: 100%;         /* responsive width */
+  height: 180px;       /* fixed height */
+  object-fit: cover;   /* crop without deformation */
+  border-radius: 8px;  /* optional: rounded corners */
+}
