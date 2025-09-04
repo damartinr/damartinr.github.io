@@ -1107,23 +1107,21 @@ nav[data-toggle="toc"] {
 }
 
 .featured-posts {
-  a {
-    color: var(--global-text-color-light);
-    text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* space between posts */
+}
 
-    .card-text {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+/* Style each post link (or card) so they can shrink */
+.featured-posts a {
+  flex: 1 1 45%; /* two per row on small screens */
+  box-sizing: border-box;
+}
 
-    &:hover {
-      color: var(--global-theme-color);
-
-      .card-title {
-        color: var(--global-theme-color);
-      }
-    }
+/* Optional: make it one per row on very small screens */
+@media (max-width: 400px) {
+  .featured-posts a {
+    flex: 1 1 100%;
   }
 
   .post-meta {
@@ -1133,6 +1131,9 @@ nav[data-toggle="toc"] {
     padding-top: 0.5rem;
   }
 }
+
+
+
 
 .unloaded {
   display: none !important;
