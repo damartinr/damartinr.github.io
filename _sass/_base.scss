@@ -1107,22 +1107,25 @@ nav[data-toggle="toc"] {
 }
 
 .featured-posts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem; /* space between posts */
-}
+  a {
+    color: var(--global-text-color-light);
+    text-decoration: none;
 
-/* Style each post link (or card) so they can shrink */
-.featured-posts a {
-  flex: 1 1 45%; /* two per row on small screens */
-  box-sizing: border-box;
-}
+    .card-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
-/* Optional: make it one per row on very small screens */
-@media (max-width: 400px) {
-  .featured-posts a {
-    flex: 1 1 100%;
+    &:hover {
+      color: var(--global-theme-color);
+
+      .card-title {
+        color: var(--global-theme-color);
+      }
+    }
   }
+
 
   .post-meta {
     color: var(--global-text-color-light);
