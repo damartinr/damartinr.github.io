@@ -96,7 +96,7 @@ ninja.data = [{
               window.location.href = "/news/announcement_3/";
             },},{id: "projects-practical-reason",
           title: 'Practical Reason',
-          description: "What is considered reasonable, normal?",
+          description: "What is considered reasonable? And normal?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/practicalreason/";
             },},{
