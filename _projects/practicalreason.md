@@ -20,7 +20,7 @@ A parallel approach has been proposed for the delineation of the term <b>'normal
 
 <b>In this project</b>, we are investigating how these four concepts, average, ideal, normal and reasonable, can be understood in relation to each other. We are examining them in terms of <b>frequency estimation</b> ([study one](#study-one), i.e. what is the average/ideal/reasonable/normal amount of different things) <b>evaluation</b> ([study two](#study-two), i.e. how favourably or unfavourably these frequencies are), and <b>cognitive accessibility</b> (i.e. how quickly do these frequencies come to mind?).
 
-### Study one <img src="/assets/img/projects/preregistered.png" width="34" style="transition: transform 0.3s; vertical-align: middle;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';" /> 
+### Study one <img src="/assets/img/projects/preregistered.svg.png" width="34" style="transition: transform 0.3s; vertical-align: middle;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';" /> 
      
 The results of the study indicate the presence of <b>two significant patterns</b>: 
 
@@ -41,7 +41,7 @@ Regarding normal and reasonable estimates: The <b><span style="color:forestgreen
     <b>In this graph, the x-axis is the normalized response scale, from 0, the lowest frequency estimate, to 1, the highest. The y-axis shows the cumulative distribution, which tells us the proportion of responses that fall below a given value. So, for example, if a curve reaches 0.5 on the y-axis at 0.25 on the x-axis, that means half of the responses were below 0.25 of the response.</b>
 </div>
 
-### Study two <img src="/assets/img/projects/preregistered.png" width="34" style="transition: transform 0.3s; vertical-align: middle;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';" /> 
+### Study two <img src="/assets/img/projects/preregistered.svg.png" width="34" style="transition: transform 0.3s; vertical-align: middle;" onmouseover="this.style.transform='scale(1.3)';" onmouseout="this.style.transform='scale(1)';" /> 
 
 <b>In our second study</b>, we explored <b>how people evaluate</b> average, ideal, normal, and reasonable frequencies. Participants were shown one value. This corresponded to one of the four properties. However, the participants <b>did not know which property they were evaluating</b>. They were just asked to rate how favourable or unfavourable they found the frequency for that specific item.
 
