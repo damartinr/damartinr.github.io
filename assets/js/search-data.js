@@ -94,8 +94,13 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_3/";
-            },},{id: "projects-practical-reason",
-          title: 'Practical Reason',
+            },},{id: "projects-the-animal-dilemmas-project",
+          title: 'The Animal Dilemmas Project',
+          description: "Who do we see as deserving our moral concern?",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/animal-dilemmas/";
+            },},{id: "projects-the-practical-reason-project",
+          title: 'The Practical Reason Project',
           description: "What is considered reasonable? And normal?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/practicalreason/";
