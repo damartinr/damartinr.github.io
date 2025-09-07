@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Practical Reason
+title: The Practical Reason Project
 description: What is considered reasonable? And normal?
 img: assets/img/projects/practicalreason/header.png
+permalink: /projects/practicalreason/
 importance: 2
 category: work
 giscus_comments: true
