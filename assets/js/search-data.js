@@ -60,7 +60,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/edinburgh/";
+            window.location.href = "/blog/phair2025/";
           
         },
       },{id: "post-2025-bioxphi-summit-in-basel",
@@ -71,7 +71,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2025/basel2025/";
+            window.location.href = "/blog/basel2025/";
           
         },
       },{id: "books-the-godfather",
