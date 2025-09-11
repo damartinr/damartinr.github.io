@@ -2,6 +2,7 @@
 layout: post
 title: PHAIR  2025 in Edinburgh
 date: 2025-07-15 16:30:00
+permalink: /blog/phair2025/
 description: The PHAIR 2025 Animal Advocacy Conference in Edinburgh
 tags: psychology normality morality philosophy
 thumbnail: assets/img/blog/edinburgh2025/6.png
