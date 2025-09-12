@@ -1448,20 +1448,3 @@ figure.cover {
   overflow-y: auto;
 }
 
-/* Adjust project card styling for the about page */
-.about-projects .card {
-  transition: transform 0.2s;
-}
-
-.about-projects .card:hover {
-  transform: translateY(-5px);
-}
-
-.about-projects .card-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
-.about-projects .card-text {
-  font-size: 0.9rem;
-}

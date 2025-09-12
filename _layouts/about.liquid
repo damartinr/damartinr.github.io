@@ -2,6 +2,7 @@
 layout: default
 ---
 <style>
+
   /* Compact styling for the about page */
   .post-header h1 {
     margin-bottom: 0.5rem;
@@ -70,24 +71,31 @@ layout: default
     padding: 0.9rem;
   }
   
-  /* Two column layout */
+  /* Two column layout with equal height */
   .two-column-section {
     display: flex;
     flex-wrap: wrap;
     margin: 1.5rem 0;
     gap: 1.2rem;
+    align-items: stretch; /* This makes columns equal height */
   }
   
   .column {
     flex: 1;
     min-width: 280px;
-  }
-  
-  /* Adjust project grid for compact sizing */
-  .project-grid {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
+  }
+  
+  /* Make both sections equal height */
+  .posts-container, .projects-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .latest-posts, .project-grid {
+    flex: 1;
   }
   
   /* GitHub icon styling */
@@ -119,6 +127,10 @@ layout: default
     
     .section-heading a {
       font-size: 1.15rem;
+    }
+    
+    .column {
+      min-width: 100%;
     }
   }
 </style>
@@ -173,36 +185,42 @@ layout: default
       <!-- Latest Posts Column -->
       {% if page.latest_posts and page.latest_posts.enabled %}
         <div class="column">
-          <h2 class="section-heading">
-            <a href="{{ '/blog/' | relative_url }}">See what I've been up to</a>
-          </h2>
-          {% include latest_posts.liquid %}
+          <div class="posts-container">
+            <h2 class="section-heading">
+              <a href="{{ '/blog/' | relative_url }}">See what I've been up to</a>
+            </h2>
+            <div class="latest-posts">
+              {% include latest_posts.liquid %}
+            </div>
+          </div>
         </div>
       {% endif %}
       
       <!-- Projects Column -->
       {% if page.projects and page.projects.enabled %}
         <div class="column">
-          <h2 class="section-heading">
-            <a href="{{ '/projects/' | relative_url }}">Projects I'm working on!</a>
-          </h2>
-          <p class="project-subtitle">A glimpse of my current work and research projects</p>
-          <div class="project-grid">
-            {% assign featured_projects = site.projects | where: "featured", true | sort: "importance" | limit: 3 %}
-            {% if featured_projects.size > 0 %}
-              {% for project in featured_projects %}
-                <div class="project-card">
-                  {% include projects.liquid %}
-                </div>
-              {% endfor %}
-            {% else %}
-              {% assign sorted_projects = site.projects | sort: "importance" | limit: 3 %}
-              {% for project in sorted_projects %}
-                <div class="project-card">
-                  {% include projects.liquid %}
-                </div>
-              {% endfor %}
-            {% endif %}
+          <div class="projects-container">
+            <h2 class="section-heading">
+              <a href="{{ '/projects/' | relative_url }}">Projects I'm working on!</a>
+            </h2>
+            <p class="project-subtitle">A glimpse of my current work and research projects</p>
+            <div class="project-grid">
+              {% assign featured_projects = site.projects | where: "featured", true | sort: "importance" | limit: 3 %}
+              {% if featured_projects.size > 0 %}
+                {% for project in featured_projects %}
+                  <div class="project-card">
+                    {% include projects.liquid %}
+                  </div>
+                {% endfor %}
+              {% else %}
+                {% assign sorted_projects = site.projects | sort: "importance" | limit: 3 %}
+                {% for project in sorted_projects %}
+                  <div class="project-card">
+                    {% include projects.liquid %}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            </div>
           </div>
         </div>
       {% endif %}

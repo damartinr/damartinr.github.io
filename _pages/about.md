@@ -28,7 +28,7 @@ latest_posts:
 
 projects:
   enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
+  scrollable: true # adds a vertical scroll bar 
 
 ---
 
@@ -41,3 +41,5 @@ For instance, we are currently studying how people understand the concepts of 'n
 In another line of work, we are analysing the moral priority that people attribute to different animals and plants. Using a simple behavioural task, we investigate the extent to which we feel morally close to different living beings, and the implications these perceptions have for dignity, rights, and duties of care and attention ([click here for more information](/projects/animal-dilemmas/)).
 
 Outside of research, I enjoy spending time outdoors, cooking, walking my dogs, and occasionally going on hiking trips. I believe that these activities, as well as contact with people and nature, also feed into my understanding of philosophy and moral psychology.
+
+
