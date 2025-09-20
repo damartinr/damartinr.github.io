@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-bookshelf",
+          title: "bookshelf",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/books/";
+          },
         },{id: "nav-cv",
           title: "cv",
           description: "Here you can find an overview of my academic and professional activities from recent years.",
@@ -74,11 +81,11 @@ ninja.data = [{
             window.location.href = "/blog/basel2025/";
           
         },
-      },{id: "books-the-godfather",
-          title: 'The Godfather',
+      },{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
+          title: 'The Expanding Circle, Ethics Evolution and Moral Progress',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
+              window.location.href = "/books/singer/";
             },},{id: "news-announcement-1",
           title: 'Announcement_1',
           description: "",
