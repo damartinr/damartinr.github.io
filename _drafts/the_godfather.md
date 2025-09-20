@@ -10,6 +10,7 @@ tags: top-100
 buy_link: https://www.amazon.com/Godfather-Deluxe-Mario-Puzo/dp/0593542592
 started: 2024-08-23
 finished: 2024-09-07
+excerpt: "Singer explores how our moral concern extends beyond kinship and tribe, laying the foundation for debates on animal rights and global ethics."
 released: 1969
 stars: 5
 goodreads_review: 6318556633
