@@ -81,6 +81,17 @@ ninja.data = [{
             window.location.href = "/blog/basel2025/";
           
         },
+      },{id: "post-hejnice-summer-school-2024",
+        
+          title: "Hejnice Summer School 2024",
+        
+        description: "2024 Summer School of Environmental Philosophy in Hejnice, Czech Republic organized by the University of Pardubice.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/summer_school/";
+          
+        },
       },{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
           title: 'The Expanding Circle, Ethics Evolution and Moral Progress',
           description: "",
