@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hejnice Summer School 2024
-date: 2024-07-15 09:30:00
+date: 2024-07-23 09:30:00
 description: 2024 Summer School of Environmental Philosophy in Hejnice, Czech Republic organized by the University of Pardubice.
 tags: psychology philosophy environment
 thumbnail: assets/img/blog/summer_school2024_1/1.jpeg
