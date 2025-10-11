@@ -81,6 +81,17 @@ ninja.data = [{
             window.location.href = "/blog/basel2025/";
           
         },
+      },{id: "post-vienna-summer-school-2024",
+        
+          title: "Vienna Summer School 2024",
+        
+        description: "2024 Summer School of RAQMYAT Project in Vienna, Austria, organized by the UNIMED and the University of Vienna.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2024/summer_school/";
+          
+        },
       },{id: "post-hejnice-summer-school-2024",
         
           title: "Hejnice Summer School 2024",
