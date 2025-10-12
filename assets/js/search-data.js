@@ -89,7 +89,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/summer_school/";
+            window.location.href = "/blog/2024/summer_school_2/";
           
         },
       },{id: "post-hejnice-summer-school-2024",
@@ -100,7 +100,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2024/summer_school/";
+            window.location.href = "/blog/2024/summer_school_1/";
           
         },
       },{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
