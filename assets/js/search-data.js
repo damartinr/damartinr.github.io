@@ -108,6 +108,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/singer/";
+            },},{id: "books-animal-liberation-now",
+          title: 'Animal Liberation Now',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/singer_animal_liberation/";
             },},{id: "news-announcement-1",
           title: 'Announcement_1',
           description: "",
