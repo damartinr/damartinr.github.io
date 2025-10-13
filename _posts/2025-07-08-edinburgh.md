@@ -7,7 +7,7 @@ description: The PHAIR 2025 Animal Advocacy Conference in Edinburgh
 tags: psychology normality morality philosophy
 thumbnail: assets/img/blog/edinburgh2025/6.png
 categories:
-featured: true
+featured: false
 images:
   compare: true
   slider: true

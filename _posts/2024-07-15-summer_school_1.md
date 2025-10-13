@@ -6,7 +6,7 @@ description: 2024 Summer School of Environmental Philosophy in Hejnice, Czech Re
 tags: psychology philosophy environment
 thumbnail: assets/img/blog/summer_school2024_1/1.jpeg
 categories:
-featured: true
+featured: false
 images:
   compare: true
   slider: true

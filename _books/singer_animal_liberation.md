@@ -6,7 +6,7 @@ cover: assets/img/book_covers/animal_liberation_now.jpg
 categories: classics animal-ethics moral-circle ethics morality
 released: 2024
 started: 2024-09-23
-finished: 2024-12-12
+finished: 2024-12-21
 excerpt: "Singer talks about the treatment of animals and argues we should treat them differently under the equal consideration principle."
 status: Finished
 giscus_comments: true

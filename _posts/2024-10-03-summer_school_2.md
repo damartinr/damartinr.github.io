@@ -6,7 +6,7 @@ description: 2024 Summer School of RAQMYAT Project in Vienna, Austria, organized
 tags: psychology philosophy 
 thumbnail: assets/img/blog/summer_school2024_2/2.jpg
 categories:
-featured: true
+featured: false
 images:
   compare: true
   slider: true
