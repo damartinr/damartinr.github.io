@@ -3,6 +3,19 @@ layout: default
 ---
 <style>
 
+/* Justify all article text and set paragraph spacing */
+.post article, 
+.post article .clearfix {
+    text-align: justify;
+    text-justify: inter-word; /* improves spacing in some browsers */
+}
+
+.post article p, 
+.post article .clearfix p {
+    margin-bottom: 1em; /* equal spacing between paragraphs */
+}
+
+
   /* Compact styling for the about page */
   .post-header h1 {
     margin-bottom: 0.5rem;
