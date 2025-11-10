@@ -10,6 +10,15 @@ layout: default
   <!-- Page/Post style -->
   <style type="text/css">
     {{ page._styles }}
+    #markdown-content {
+      text-align: justify;
+    }
+  </style>
+{% else %}
+  <style>
+    #markdown-content {
+      text-align: justify;
+    }
   </style>
 {% endif %}
 
