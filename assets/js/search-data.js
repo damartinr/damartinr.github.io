@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-easp-summer-school-2025",
+        },{id: "post-2025-legal-interpretation-and-moral-reasoning-workshop",
+        
+          title: "2025 Legal Interpretation and Moral Reasoning Workshop",
+        
+        description: "2025 Legal Interpretation and Moral Reasoning Workshop, organized at the University of Granada",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/workshop2025/";
+          
+        },
+      },{id: "post-easp-summer-school-2025",
         
           title: "EASP Summer School 2025",
         
