@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: transparent;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: transparent;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 20px;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+        .slider-group {
+            text-align: center;
+        }
+        .slider-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .slider-value {
+            display: inline-block;
+            min-width: 40px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .group-a .slider-label { color: #00a0b0; }
+        .group-b .slider-label { color: #d2363e; }
+        .slider {
+            width: 150px;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #ddd;
+            border-radius: 3px;
+            outline: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        #mu_a::-webkit-slider-thumb { background: #00a0b0; }
+        #mu_b::-webkit-slider-thumb { background: #d2363e; }
+    </style>
+</head>
+<body>
+   <h1>Interactive hypothetical distributions of the trait <i>Liking Animals</i> by gender</h1>
+
+    <div class="container">        
+        <div class="controls">
+            <div class="slider-group group-a">
+                <span class="slider-label">Hypothetical men distribution</span>
+                <input type="range" id="mu_a" class="slider" min="-2" max="2" step="0.1" value="0">
+                <span class="slider-value" id="mu_a_value">0.0</span>
+            </div>
+            
+            <div class="slider-group group-b">
+                <span class="slider-label">Hypothetical women distribution</span>
+                <input type="range" id="mu_b" class="slider" min="-2" max="2" step="0.1" value="0.5">
+                <span class="slider-value" id="mu_b_value">0.5</span>
+            </div>
+        </div>
+        
+        <div id="plot"></div>
+
+        <script>
+            // Fixed parameters
+            const sigma_a = 1.5;
+            const sigma_b = 1.5;
+            const total_population = 1000000;
+            
+            // Normal distribution PDF
+            function normalPDF(x, mu, sigma) {
+                return (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2));
+            }
+
+            // Format population for easy reading
+            function formatPopulation(num) {
+                if (num >= 1000000) {
+                    return (num / 1000000).toFixed(1) + 'M';
+                } else if (num >= 100000) {
+                    return (num / 1000).toFixed(0) + 'k';
+                } else if (num >= 1000) {
+                    return (num / 1000).toFixed(1) + 'k';
+                } else {
+                    return Math.round(num).toString();
+                }
+            }
+
+            // Update plot function
+            function updatePlot() {
+                const mu_a = parseFloat(document.getElementById('mu_a').value);
+                const mu_b = parseFloat(document.getElementById('mu_b').value);
+
+                document.getElementById('mu_a_value').textContent = mu_a.toFixed(1);
+                document.getElementById('mu_b_value').textContent = mu_b.toFixed(1);
+
+                const x = [];
+                const y_a = [];
+                const y_b = [];
+                
+                // Generate data points
+                for (let i = -4; i <= 4; i += 0.05) {
+                    x.push(i);
+                    y_a.push(normalPDF(i, mu_a, sigma_a) * total_population);
+                    y_b.push(normalPDF(i, mu_b, sigma_b) * total_population);
+                }
+
+                // Colors from your palette
+                const color_a = '#00a0b0';
+                const color_b = '#d2363e';
+                const brown_color = '#603e19';
+                const yellow_color = '#ffe502';
+                
+                // Create traces with formatted population in hover
+                const trace1 = {
+                    x: x,
+                    y: y_a,
+                    mode: 'lines',
+                    name: 'Hypothetical men distribution',
+                    line: { 
+                        color: color_a,
+                        width: 0.3,
+                        shape: 'spline'
+                    },
+                    fill: 'tozeroy',
+                    fillcolor: color_a + '20', // Adding alpha for fill
+                    hovertemplate: '<br>Hyp. men population: %{text}<extra></extra>',
+                    text: y_a.map(y => formatPopulation(y))
+                };
+
+                const trace2 = {
+                    x: x,
+                    y: y_b,
+                    mode: 'lines',
+                    name: 'Hypothetical women distribution',
+                    line: { 
+                        color: color_b,
+                        width: 0.3,
+                        shape: 'spline'
+                    },
+                    fill: 'tozeroy',
+                    fillcolor: color_b + '20', // Adding alpha for fill
+                    hovertemplate: '<br>Hyp. women population: %{text}<extra></extra>',
+                    text: y_b.map(y => formatPopulation(y))
+                };
+
+                const layout = {
+                    xaxis: { 
+                        range: [-4, 4],
+                        showgrid: false,
+                        gridcolor: 'rgba(0,0,0,0.1)',
+                        zeroline: true,
+                        zerolinecolor: brown_color + '50',
+                        tickvals: [-3, 0, 3], // Added 0 for reference
+                        ticktext: ['Anti-pet', 'Average', 'Pro-pet'],
+                        tickfont: { 
+                            size: 12, 
+                            color: '#333' 
+                        },
+                        title: ''
+                    },
+                    yaxis: { 
+                        title: 'Hypothetical population',
+                        showgrid: false,
+                        gridcolor: 'rgba(0,0,0,0.1)',
+                        zeroline: false
+                    },
+                    height: 450,
+                    plot_bgcolor: 'rgba(255, 255, 255, 0.9)',
+                    paper_bgcolor: 'rgba(255, 255, 255, 0)',
+                    showlegend: false,
+                    legend: {
+                        x: 0.72,
+                        y: 0.98,
+                        bgcolor: 'rgba(255, 255, 255, 0.8)',
+                        bordercolor: brown_color + '30',
+                        borderwidth: 0.5,
+                        font: { color: brown_color }
+                    },
+                    margin: { t: 20, b: 20, l: 60, r: 30 },
+
+                };
+
+                Plotly.react('plot', [trace1, trace2], layout);
+            }
+
+            // Event listeners
+            document.getElementById('mu_a').addEventListener('input', updatePlot);
+            document.getElementById('mu_b').addEventListener('input', updatePlot);
+
+            // Initialize plot
+            updatePlot();
+        </script>
+    </div>
+</body>
+</html>

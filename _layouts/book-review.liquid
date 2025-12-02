@@ -212,4 +212,36 @@ layout: default
     }
     .mobile-break { display: none; }
   }
+
+  /* Text justification for book review content */
+article {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep specific elements left-aligned */
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > h5,
+article > h6,
+article .post-header *,
+article .post-meta,
+article .post-tags,
+article hr,
+article br.mobile-break,
+article figure,
+article figcaption,
+article blockquote,
+article .citation-section * {
+  text-align: left;
+}
+
+/* For larger screens only (optional) */
+@media screen and (min-width: 600px) {
+  article {
+    text-align: justify;
+  }
+}
 </style>
