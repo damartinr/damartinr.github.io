@@ -114,7 +114,12 @@ ninja.data = [{
             window.location.href = "/blog/2024/summer_school_1/";
           
         },
-      },{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
+      },{id: "books-some-we-love-some-we-hate-some-we-eat",
+          title: 'Some We Love, Some We Hate, Some We Eat',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/herzog_some/";
+            },},{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
           title: 'The Expanding Circle, Ethics Evolution and Moral Progress',
           description: "",
           section: "Books",handler: () => {
