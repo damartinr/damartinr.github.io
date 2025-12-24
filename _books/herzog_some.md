@@ -9,6 +9,8 @@ started: 2025-01-21
 finished: 2025-04-19
 excerpt: "Why Is So Hard to Think Straight About Animals"
 status: Finished
+stars: 4
+goodreads_review: 8171149882
 giscus_comments: true
 related_publications: true
 citation: true

@@ -38,24 +38,38 @@ layout: default
           {% endif %}
           <i class="fa-solid fa-stop fa-sm" style="color: #e56565 !important"></i> <em>{{ page.finished }}</em>
         {% endif %}
-        {% if page.stars %}
-          {% if page.started or page.finished %}
-            &nbsp;&middot;&nbsp;
-          {% endif %}
-          {% assign full_stars = page.stars | floor %}
-          {% assign half_star = page.stars | minus: full_stars %}
-          {% assign empty_stars = 5 | minus: full_stars %}
-          {% if half_star > 0 %}
-            {% assign empty_stars = empty_stars | minus: 1 %}
-          {% endif %}
-          {% for i in (1..full_stars) -%}
-            <i class="fa-solid fa-star fa-sm"></i>
-          {%- endfor -%}
-          {%- if half_star > 0 %}<i class="fa-solid fa-star-half-stroke fa-sm"></i>{% endif -%}
-          {%- for i in (1..empty_stars) -%}
-            <i class="fa-regular fa-star fa-sm"></i>
-          {%- endfor -%}
-        {% endif %}
+   {% if page.stars %}
+  {% if page.started or page.finished %}
+    &nbsp;&middot;&nbsp;
+  {% endif %}
+
+  {% if page.goodreads_review %}
+    <a target="_blank" href="https://www.goodreads.com/review/show/{{ page.goodreads_review }}">
+      <i class="fa-brands fa-goodreads-g"></i>
+  {% endif %}
+
+  {% assign full_stars = page.stars | floor %}
+  {% assign half_star = page.stars | minus: full_stars %}
+  {% assign empty_stars = 5 | minus: full_stars %}
+  {% if half_star > 0 %}
+    {% assign empty_stars = empty_stars | minus: 1 %}
+  {% endif %}
+
+  {% for i in (1..full_stars) -%}
+    <i class="fa-solid fa-star fa-sm"></i>
+  {%- endfor -%}
+  {%- if half_star > 0 %}
+    <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+  {% endif -%}
+  {%- for i in (1..empty_stars) -%}
+    <i class="fa-regular fa-star fa-sm"></i>
+  {%- endfor -%}
+
+  {% if page.goodreads_review %}
+    </a>
+  {% endif %}
+{% endif %}
+
       </p>
     {% endif %}
 
