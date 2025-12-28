@@ -3,7 +3,7 @@ layout: about
 title: about
 permalink: /
 subtitle: PhD Student at the <a href='https://www.ugr.es/en'>University of Granada</a>.
-
+lang: en
 profile:
   align: right
   image: IMG_4829.jpeg

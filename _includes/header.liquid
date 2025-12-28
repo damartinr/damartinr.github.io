@@ -125,6 +125,7 @@
               </button>
             </li>
           {% endif %}
+
           {% if site.enable_darkmode %}
             <!-- Toogle theme mode -->
             <li class="toggle-container">
@@ -135,6 +136,25 @@
               </button>
             </li>
           {% endif %}
+
+              
+<!-- Language Switch -->
+<!-- Language Switch -->
+<li class="nav-item dropdown ml-3" id="lang-dropdown">
+  <button 
+    id="lang-toggle" 
+    class="nav-link dropdown-toggle" 
+    type="button"
+    aria-haspopup="true"
+    aria-expanded="false"
+    style="border:none; background:none; cursor:pointer;">
+       🌐
+  </button>
+  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lang-toggle">
+    <a class="dropdown-item" href="#" data-lang="en">English</a>
+    <a class="dropdown-item" href="#" data-lang="es">Español</a>
+  </div>
+</li>
         </ul>
       </div>
     </div>
