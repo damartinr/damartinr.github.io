@@ -1,0 +1,1 @@
+!function(){if(localStorage.getItem("preferredLang"))return;const a=navigator.language||navigator.userLanguage;let e="en";a&&a.startsWith("es")&&(e="es"),localStorage.setItem("preferredLang",e),window.location.pathname.startsWith(`/${e}`)||(window.location.pathname=`/${e}/`)}();
