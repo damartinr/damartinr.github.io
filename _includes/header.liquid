@@ -137,10 +137,9 @@
             </li>
           {% endif %}
 
-              
+{% if page.url == '/' %}
 <!-- Language Switch -->
-<!-- Language Switch -->
-<li class="nav-item dropdown ml-3" id="lang-dropdown">
+<li class="nav-item dropdown" id="lang-dropdown">
   <button 
     id="lang-toggle" 
     class="nav-link dropdown-toggle" 
@@ -155,6 +154,7 @@
     <a class="dropdown-item" href="#" data-lang="es">Español</a>
   </div>
 </li>
+{% endif %}
         </ul>
       </div>
     </div>
