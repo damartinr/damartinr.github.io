@@ -119,6 +119,11 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/herzog_some/";
+            },},{id: "books-the-moral-circle",
+          title: 'The Moral Circle',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/sebo_moral_circle/";
             },},{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
           title: 'The Expanding Circle, Ethics Evolution and Moral Progress',
           description: "",
