@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-legal-interpretation-and-moral-reasoning-workshop",
+        },{id: "post-i-ve-been-awarded-a-fulbright-scholarship",
+        
+          title: "I’ve Been Awarded a Fulbright Scholarship!",
+        
+        description: "Awarded a Fulbright Scholarship for the upcoming academic year and was mentioned in the &#39;Granada Hoy&#39; newspapers!",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/fulbright_announcement/";
+          
+        },
+      },{id: "post-legal-interpretation-and-moral-reasoning-workshop",
         
           title: "Legal Interpretation and Moral Reasoning Workshop",
         
