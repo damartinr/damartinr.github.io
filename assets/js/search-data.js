@@ -129,12 +129,12 @@ ninja.data = [{
           title: 'Some We Love, Some We Hate, Some We Eat',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/herzog_some/";
+              window.location.href = "/books/herzog-some/";
             },},{id: "books-the-moral-circle",
           title: 'The Moral Circle',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/sebo_moral_circle/";
+              window.location.href = "/books/sebo-moral-circle/";
             },},{id: "books-the-expanding-circle-ethics-evolution-and-moral-progress",
           title: 'The Expanding Circle, Ethics Evolution and Moral Progress',
           description: "",
@@ -144,7 +144,7 @@ ninja.data = [{
           title: 'Animal Liberation Now',
           description: "",
           section: "Books",handler: () => {
-              window.location.href = "/books/singer_animal_liberation/";
+              window.location.href = "/books/singer-animal-liberation/";
             },},{id: "news-announcement-1",
           title: 'Announcement_1',
           description: "",
