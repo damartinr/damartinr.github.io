@@ -145,15 +145,15 @@ newsletter:
 collections:
   books:
     output: true
+    permalink: /books/:name/
   news:
     defaults:
       layout: post
     output: true
   projects:
     output: true
-  posts: 
-    output: true
-    
+  posts:
+    output: true 
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
