@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-i-ve-been-awarded-a-fulbright-scholarship",
+        },{id: "post-my-three-month-research-visit-at-the-university-of-oxford",
+        
+          title: "My three-month research visit at the University of Oxford",
+        
+        description: "Three-month research visit at the University of Oxford and some thoughts about it",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/oxford_visit/";
+          
+        },
+      },{id: "post-i-ve-been-awarded-a-fulbright-scholarship",
         
           title: "I’ve Been Awarded a Fulbright Scholarship!",
         
