@@ -23,7 +23,6 @@ Beyond the research, I got to experience the academic life I had only imagined, 
 <div style="max-width: 600px; margin: 0 auto;">
 <swiper-container keyboard="true" navigation="true" pagination="true" pagination-clickable="true" pagination-dynamic-bullets="true" rewind="true">
 <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/blog/oxford_visit/1.jpeg" class="img-fluid rounded z-depth-1 img-small" %}</swiper-slide>
-<swiper-slide>{% include figure.liquid loading="eager" path="assets/img/blog/oxford_visit/2.jpeg" class="img-fluid rounded z-depth-1 img-small" %}</swiper-slide>
 <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/blog/oxford_visit/3.jpeg" class="img-fluid rounded z-depth-1 img-small" %}</swiper-slide>
 <swiper-slide>{% include figure.liquid loading="eager" path="assets/img/blog/oxford_visit/4.jpeg" class="img-fluid rounded z-depth-1 img-small" %}</swiper-slide>
 </swiper-container>
