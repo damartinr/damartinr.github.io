@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Orientation Days Fulbright 2026-2027 cohort
-date: 2026-07-16 12:26:00
+date: 2026-07-16 15:09:00
 permalink: /blog/oxford_visit/
 description: Three days orientation sessions for the next year Fulbright grantees
 tags: psychology philosophy moral juridisprudence
