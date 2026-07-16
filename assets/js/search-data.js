@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-my-three-month-research-visit-at-the-university-of-oxford",
+        },{id: "post-orientation-days-fulbright-2026-2027-cohort",
+        
+          title: "Orientation Days Fulbright 2026-2027 cohort",
+        
+        description: "Three days orientation sessions for the next year Fulbright grantees",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/oxford_visit/";
+          
+        },
+      },{id: "post-my-three-month-research-visit-at-the-university-of-oxford",
         
           title: "My three-month research visit at the University of Oxford",
         
