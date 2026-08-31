@@ -45,7 +45,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/oxford_visit/";
+            window.location.href = "/blog/fulbright_orientation/";
           
         },
       },{id: "post-my-three-month-research-visit-at-the-university-of-oxford",
