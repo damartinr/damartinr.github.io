@@ -6,7 +6,7 @@ description: 2025 Summer School of the European Association of Social Psychology
 tags: psychology
 thumbnail: assets/img/blog/summer_school2025/1.jpg
 categories:
-featured: true
+featured: false
 images:
   compare: true
   slider: true

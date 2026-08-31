@@ -4,7 +4,7 @@ title: Orientation Days Fulbright 2026-2027 cohort
 date: 2026-07-15 15:09:00
 permalink: /blog/fulbright_orientation/
 description: Three days orientation sessions for the next year Fulbright grantees
-tags: psychology philosophy moral juridisprudence
+tags: psychology philosophy moral juridisprudbuence
 thumbnail: assets/img/blog/fulbright_orientation/3.jpeg
 categories:
 featured: true
