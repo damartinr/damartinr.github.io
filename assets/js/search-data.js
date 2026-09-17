@@ -37,7 +37,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-orientation-days-fulbright-2026-2027-cohort",
+        },{id: "post-6th-x-phi-conference-in-cagliari",
+        
+          title: "6th X-Phi Conference in Cagliari",
+        
+        description: "The 6th edition of the European Experimental Philosophy Conference",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/6thXPhi/";
+          
+        },
+      },{id: "post-orientation-days-fulbright-2026-2027-cohort",
         
           title: "Orientation Days Fulbright 2026-2027 cohort",
         
