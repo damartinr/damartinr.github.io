@@ -7,7 +7,7 @@ categories: animal-ethics moral-circle ethics perception
 released: 2013
 started: 2026-05-21
 finished: 2026-06-26
-excerpt: "The moral properties are linked to the moral act. What our senses pick up, triggers (meaning is there) and anchors (meaning is fixed) the moral property"
+excerpt: ".What our senses pick up, triggers (meaning is there) and anchors (meaning is fixed) the moral property."
 status: Finished
 stars: 4
 giscus_comments: true
