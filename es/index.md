@@ -29,6 +29,11 @@ projects:
   enabled: true
   scrollable: true # adds a vertical scroll bar 
 
+
+bookshelf:
+  enabled: true
+
+
 ---
 
 

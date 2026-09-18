@@ -29,6 +29,9 @@ projects:
   enabled: true
   scrollable: true # adds a vertical scroll bar 
 
+bookshelf:
+  enabled: true
+
 ---
 
 您好！我叫丹尼尔·马丁，目前正在<a href='https://www.ugr.es/en'>格拉纳达大学</a>攻读哲学博士学位。我的学术生涯始于在同一所大学攻读<a href='https://www.ugr.es/en/study/undergraduate/bachelors-degree-philosophy'>哲学学士学位</a>，随后在马德里康普顿斯大学完成了<a href='https://venalacomplu.ucm.es/estudios/master-eticaaplicada'>应用伦理学硕士学位</a>。最近，我还完成了<a href='https://masteres.ugr.es/profesorado/'>教学硕士学位</a>，并同时在<a href='https://www.uned.es/universidad/inicio/en/estudios/grados/grado-en-psicologia.html?idContenido=1'>国立远程教育大学（UNED）攻读心理学学士学位</a>。

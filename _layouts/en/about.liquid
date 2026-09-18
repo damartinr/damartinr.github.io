@@ -146,6 +146,118 @@ layout: default
       min-width: 100%;
     }
   }
+
+  /* Scrollable columns so both sides stay the same height */
+  .latest-posts, .project-grid {
+    max-height: 700px;
+    overflow-y: auto;
+    padding-right: 0.5rem; /* room for the scrollbar so it doesn't clip content */
+  }
+
+  /* Nicer scrollbar */
+  .latest-posts::-webkit-scrollbar, .project-grid::-webkit-scrollbar {
+    width: 6px;
+  }
+  .latest-posts::-webkit-scrollbar-thumb, .project-grid::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.15);
+    border-radius: 3px;
+  }
+
+
+/* Bookshelf teaser row */
+.bookshelf-section {
+  margin-top: 1.5rem;
+}
+
+.bookshelf-grid {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+  scroll-snap-type: x mandatory;
+}
+
+.book-card {
+  flex: 0 0 calc(25% - 0.9rem); /* 4 cards per view, accounting for gap */
+  text-decoration: none;
+  color: inherit;
+  scroll-snap-align: start;
+}
+
+.book-card .card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 6px;
+  height: 100%;
+}
+
+.book-card:hover .card {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.book-cover {
+  height: 220px;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.book-cover-placeholder {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #6c757d;
+}
+
+.book-card-body {
+  padding: 0.7rem 0.9rem 1rem;
+  text-align: center;
+}
+
+.book-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.book-author {
+  font-size: 0.8rem;
+  color: #6c757d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Nicer scrollbar to match the other scrollable sections */
+.bookshelf-grid::-webkit-scrollbar {
+  height: 6px;
+}
+.bookshelf-grid::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .book-card {
+    flex: 0 0 calc(50% - 0.6rem); /* 2 per view on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .book-card {
+    flex: 0 0 85%; /* ~1 per view on phones, with a peek of the next */
+  }
+}
 </style>
 
 <div class="post">
@@ -208,7 +320,7 @@ layout: default
           </div>
         </div>
       {% endif %}
-      
+
       <!-- Projects Column -->
       {% if page.projects and page.projects.enabled %}
         <div class="column">
@@ -238,6 +350,39 @@ layout: default
         </div>
       {% endif %}
     </div>
+
+    <!-- Bookshelf teaser -->
+    {% if page.bookshelf and page.bookshelf.enabled %}
+      <div class="bookshelf-section">
+        <h2 class="section-heading">
+          <a href="{{ '/books/' | relative_url }}">My moral readings and some thoughts about them!</a>
+        </h2>
+        <div class="bookshelf-grid">
+          {% assign recent_books = site.books | sort: "started" | reverse | limit: 6 %}
+          {% for book in recent_books %}
+            <a class="book-card" href="{{ book.url | relative_url }}">
+              <div class="card h-100 shadow-sm">
+                {% if book.cover %}
+                  <img class="card-img-top book-cover" alt="{{ book.title }} cover" src="{{ book.cover | relative_url }}">
+                {% elsif book.olid %}
+                  <img class="card-img-top book-cover" alt="{{ book.title }} cover" src="http://covers.openlibrary.org/b/olid/{{ book.olid }}-L.jpg?default=false">
+                {% elsif book.isbn %}
+                  <img class="card-img-top book-cover" alt="{{ book.title }} cover" src="http://covers.openlibrary.org/b/isbn/{{ book.isbn }}-L.jpg?default=false">
+                {% else %}
+                  <div class="book-cover-placeholder">{{ book.title | slice: 0 }}</div>
+                {% endif %}
+                <div class="book-card-body">
+                  <div class="book-title">{{ book.title }}</div>
+                  {% if book.author %}
+                    <div class="book-author">{{ book.author }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
