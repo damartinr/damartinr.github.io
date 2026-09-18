@@ -158,7 +158,12 @@ ninja.data = [{
             window.location.href = "/blog/2024/summer_school_1/";
           
         },
-      },{id: "books-some-we-love-some-we-hate-some-we-eat",
+      },{id: "books-moral-perception",
+          title: 'Moral Perception',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/audi-moral-perception/";
+            },},{id: "books-some-we-love-some-we-hate-some-we-eat",
           title: 'Some We Love, Some We Hate, Some We Eat',
           description: "",
           section: "Books",handler: () => {
