@@ -59,6 +59,21 @@ A look at the projects I’m working on as part of my research in [the lab](http
     margin-bottom: 0.8rem;
     font-style: italic;
 }
+
+.secondary-project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+/* Responsive: 2 columns on narrow screens */
+@media (max-width: 768px) {
+    .secondary-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
 </style>
 
 <div class="projects">
@@ -91,18 +106,18 @@ A look at the projects I’m working on as part of my research in [the lab](http
 
 {% else %}
 
-  <!-- Display all projects without categories -->
-  {% assign sorted_projects = site.projects | sort: "importance" %}
+  <!-- Primary projects (unchanged, 2 per row as before) -->
+  {% assign primary_projects = site.projects | where_exp: "p", "p.secondary != true" | sort: "importance" %}
   <div class="projects-container">
     <div class="project-grid">
       {% if page.horizontal %}
-        {% for project in sorted_projects %}
+        {% for project in primary_projects %}
           <div class="project-card">
             {% include projects_horizontal.liquid %}
           </div>
         {% endfor %}
       {% else %}
-        {% for project in sorted_projects %}
+        {% for project in primary_projects %}
           <div class="project-card">
             {% include projects.liquid %}
           </div>
@@ -110,6 +125,22 @@ A look at the projects I’m working on as part of my research in [the lab](http
       {% endif %}
     </div>
   </div>
+
+  <!-- Secondary projects (4 per row) -->
+  {% assign secondary_projects = site.projects | where: "secondary", true | sort: "importance" %}
+  {% if secondary_projects.size > 0 %}
+    <h2 class="category">Secondary Projects</h2>
+    <div class="projects-container">
+      <p class="project-subtitle">Additional collaborations I contribute to alongside my main research</p>
+      <div class="project-grid secondary-project-grid">
+        {% for project in secondary_projects %}
+          <div class="project-card">
+            {% include projects.liquid %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
 
 {% endif %}
 
