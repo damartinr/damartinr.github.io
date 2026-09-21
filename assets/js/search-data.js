@@ -198,11 +198,21 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_3/";
+            },},{id: "projects-the-prospects-of-artificial-moral-enhancement",
+          title: 'The Prospects of Artificial Moral Enhancement',
+          description: "Before and After LLMs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/MEVA/";
             },},{id: "projects-the-animal-dilemmas-project",
           title: 'The Animal Dilemmas Project',
           description: "Who do we see as deserving our moral concern?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/animal-dilemmas/";
+            },},{id: "projects-cultural-disparity-in-end-of-life-ethics",
+          title: 'Cultural disparity in End-of-Life Ethics',
+          description: "Spain and Romania variation",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/eolife-cultural-variation/";
             },},{id: "projects-the-practical-reason-project",
           title: 'The Practical Reason Project',
           description: "What is considered reasonable? And normal?",
