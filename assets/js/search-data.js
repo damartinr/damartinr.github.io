@@ -208,6 +208,11 @@ ninja.data = [{
           description: "Who do we see as deserving our moral concern?",
           section: "Projects",handler: () => {
               window.location.href = "/projects/animal-dilemmas/";
+            },},{id: "projects-textualism-in-rule-interpretation",
+          title: 'Textualism in Rule Interpretation',
+          description: "Robustness of Textualism as a Focal Point",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robustness_text/";
             },},{id: "projects-cultural-disparity-in-end-of-life-ethics",
           title: 'Cultural disparity in End-of-Life Ethics',
           description: "Spain and Romania variation",
