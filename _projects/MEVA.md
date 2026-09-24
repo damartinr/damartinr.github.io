@@ -20,7 +20,7 @@ Much of the recent experimental research into artificial moral assistants has fo
 
 #### Our research 
 
-This research provides an in-depth analysis of the trends in the perception of AI moral assistants compared to their human counterparts in different moral and non-moral contexts, spanning three waves: before ChatGPT, in 2022, in 2024, and in 2026. 
+This research provides an in-depth analysis of the trends in the perception of AI moral assistants compared to their human counterparts in different moral and non-moral contexts, spanning three waves: before the rise of large language models, in 2022, in 2024, and in 2026. 
 
 A total of 931 participants (pending the third, 2026 wave) completed an experiment with a 2 (wave: 2022 vs. 2024) × 2 (assistant: human vs. virtual) × 3 (scenario: moral, travel, training) between-subjects design. In each experimental condition, an individual sought advice from either a human or virtual assistant about training, travel itineraries, or morals.
 
@@ -28,7 +28,7 @@ The vignette describes an interaction in which either the AI or human assistants
 
 #### Some preliminary results 
 
-Human assistants were rated significantly higher than Virtual assistants. There was a difference in rate between human and virtual assistants, in both 2022 and 2024, with the gap being notably larger in 2024 (see Figure 1). 
+Human assistants were rated significantly higher than virtual assistants. There was a difference in evaluation between human and virtual assistants, in both 2022 and 2024, with the gap being notably larger in 2024 (see Figure 1). 
 
 An exploratory analysis showed that perceived personal knowledge differed across assistants and domains, and predicted moral approval. 
 
@@ -46,6 +46,6 @@ This research examines how public moral attitudes toward AI evolved over four ye
 
 <div style="text-align:center; margin: 2rem 0; font-size: 1.5rem; font-weight: bold;">
     Stay tuned to see what's coming next in this research!  
-    Exciting updates and new insights are on the way, and we can’t wait to share them with you.  
+    This is a work in progress that will be publish in a book chapter format. 
     Make sure to check back soon for the latest developments!
 </div>
