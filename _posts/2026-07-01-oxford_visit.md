@@ -34,7 +34,7 @@ While these academic experiences were enriching, I believe that the visit’s va
 </swiper-container>
 </div>
 
-Our collaboration didn’t end the day I finished my stay. Dr Francis and I have kept in touch and we regularly meet up to work on this project and discuss future ones. For anyone considering applying for a research visit with the DBL group, my only advice is… learn the bus times to get to the Warneford Hospital because sometimes they would just magically disappear. Joking aside, be proactive in offering your help with tasks—and do not skip the after-work drinks!
+Our collaboration did not end the day I finished my stay. Dr Francis and I have kept in touch and we regularly meet up to work on this project and discuss future ones. For anyone considering applying for a research visit with the DBL group, my only advice is… learn the bus times to get to the Warneford Hospital because sometimes they would just magically disappear. Joking aside, be proactive in offering your help with tasks—and do not skip the after-work drinks!
 
 Overall, I am very grateful to Dr Francis for her thoughtful care and guidance, as well as to all the members of the DBL and the entire NEUROSEC group. I am also thankful to my supervisor, Dr Hannikainen, for his support and for funding my stay through his project, and to the University of Granada for helping to cover some of the expenses of this visit.
 
