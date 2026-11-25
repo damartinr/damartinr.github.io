@@ -1,145 +1,159 @@
 ---
 layout: default
 ---
-{% unless site.data.resume %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
+    <style>
+      .cv-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: .6rem;
+        margin: 1.5rem 0 1rem;
+      }
+      .cv-nav a {
+        display: flex; align-items: center; justify-content: center; gap: .5rem;
+        padding: .65rem .8rem;
+        font-size: 1rem; font-weight: 500; text-align: center;
+        background: var(--global-card-bg-color);
+        border: 1px solid var(--global-divider-color);
+        border-radius: .25rem;
+        color: var(--global-text-color) !important;
+        text-decoration: none !important;
+        transition: border-color .2s, color .2s, box-shadow .2s;
+      }
+      .cv-nav a i { color: var(--global-theme-color); }
+      .cv-nav a:hover {
+        border-color: var(--global-theme-color);
+        color: var(--global-theme-color) !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+      }
+    </style>
+
+{%- comment -%}
+  CV layout.
+  - Section titles & icons: _data/cv_sections.yml
+  - Section order: `jsonresume` list in _config.yml (falls back to resume.json order)
+  - Unknown sections are rendered by _includes/resume/generic.liquid
+{%- endcomment -%}
+{%- assign labels = site.data.cv_sections -%}
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      {%- if page.cv_pdf -%}
+        {%- if page.cv_pdf contains '://' -%}
+          {%- assign pdf_url = page.cv_pdf -%}
+        {%- else -%}
+          {%- assign pdf_url = page.cv_pdf | prepend: 'assets/pdf/' | relative_url -%}
+        {%- endif -%}
+        <a href="{{ pdf_url }}" target="_blank" rel="noopener noreferrer" class="float-right"
+           title="Download PDF" aria-label="Download PDF version of CV">
+          <i class="fa-solid fa-file-pdf"></i>
+        </a>
+      {%- endif -%}
+    </h1>
+    {%- if page.description -%}
+      <p class="post-description">{{ page.description }}</p>
+    {%- endif -%}
+    {%- if site.data.resume.meta.lastModified -%}
+      <p class="text-muted small mb-0">Last updated: {{ site.data.resume.meta.lastModified | date: '%B %Y' }}</p>
+    {%- endif -%}
+  </header>
+
+  {%- if site.data.resume -%}
+    {%- comment -%} ---------- JSON Resume branch ---------- {%- endcomment -%}
+    {%- if site.jsonresume and site.jsonresume.size > 0 -%}
+      {%- assign section_keys = site.jsonresume -%}
+    {%- else -%}
+      {%- assign section_keys = '' | split: '' -%}
+      {%- for d in site.data.resume -%}
+        {%- assign section_keys = section_keys | push: d[0] -%}
+      {%- endfor -%}
+    {%- endif -%}
+    {%- comment -%} Quick-jump navigation {%- endcomment -%}
+    
+    <nav class="cv-nav" aria-label="CV sections">
+      {%- for key in section_keys -%}
+        {%- if key == 'meta' or key == 'basics' -%}{%- continue -%}{%- endif -%}
+        {%- assign section_data = site.data.resume[key] -%}
+        {%- if section_data == nil or section_data.size == 0 -%}{%- continue -%}{%- endif -%}
+        {%- assign label = labels.titles[key] -%}
+        {%- unless label -%}{%- assign label = key | replace: '_', ' ' | capitalize -%}{%- endunless -%}
+        {%- assign icon = labels.icons[key] -%}
+        <a href="#{{ key | slugify }}">
+          {%- if icon -%}<i class="{{ icon }}" aria-hidden="true"></i>{%- endif -%}
+          {{ label }}
+        </a>
+      {%- endfor -%}
+    </nav>
 
     <article>
       <div class="cv">
-        {% for entry in site.data.cv %}
-          <a class="anchor" id="{{ entry.title }}"></a>
+        {%- for key in section_keys -%}
+          {%- if key == 'meta' -%}{%- continue -%}{%- endif -%}
+          {%- assign section_data = site.data.resume[key] -%}
+          {%- if section_data == nil or section_data.size == 0 -%}{%- continue -%}{%- endif -%}
+
+          {%- assign label = labels.titles[key] -%}
+          {%- unless label -%}{%- assign label = key | replace: '_', ' ' | capitalize -%}{%- endunless -%}
+          {%- assign icon = labels.icons[key] -%}
+
+          {%- comment -%} Existing includes expect data = [key, value] {%- endcomment -%}
+          {%- assign data = key | split: '|' | push: section_data -%}
+
+          <a class="anchor" id="{{ key | slugify }}"></a>
           <div class="card mt-3 p-3">
-<h3 class="card-title font-weight-medium">
-  {% if data[0] == "events" %}
-    Conferences &amp; Workshops
-  {% elsif data[0] == "work" %}
-    Professional Experience
-  {% else %}
-    {{ data[0] | capitalize }}
-  {% endif %}
-</h3>
-      <div>
-              {% if entry.type == 'list' %}
-                {% include cv/list.liquid %}
-              {% elsif entry.type == 'map' %}
-                {% include cv/map.liquid %}
-              {% elsif entry.type == 'nested_list' %}
-                {% include cv/nested_list.liquid %}
-              {% elsif entry.type == 'time_table' %}
-                {% include cv/time_table.liquid %}
-              {% elsif entry.type == 'list_groups' %}
-                {% include cv/list_groups.liquid %}
-              {% else %}
-                {{ entry.contents }}
-              {% endif %}
+            <h3 class="card-title font-weight-medium">
+              {%- if icon -%}<i class="{{ icon }} fa-fw mr-2" aria-hidden="true"></i>{%- endif -%}
+              {{ label }}
+            </h3>
+            <div>
+              {%- case key -%}
+                {%- when 'basics' -%}       {%- include resume/basics.liquid -%}
+                {%- when 'education' -%}    {%- include resume/education.liquid -%}
+                {%- when 'work' -%}         {%- include resume/work.liquid -%}
+                {%- when 'volunteer' -%}    {%- include resume/volunteer.liquid -%}
+                {%- when 'projects' -%}     {%- include resume/projects.liquid -%}
+                {%- when 'awards' -%}       {%- include resume/awards.liquid -%}
+                {%- when 'skills' -%}       {%- include resume/skills.liquid -%}
+                {%- when 'publications' -%} {%- include resume/publications.liquid -%}
+                {%- when 'languages' -%}    {%- include resume/languages.liquid -%}
+                {%- when 'interests' -%}    {%- include resume/interests.liquid -%}
+                {%- when 'certificates' -%} {%- include resume/certificates.liquid -%}
+                {%- when 'references' -%}   {%- include resume/references.liquid -%}
+                {%- when 'events' -%}       {%- include resume/events.liquid -%}
+                {%- else -%}                {%- include resume/generic.liquid -%}
+              {%- endcase -%}
             </div>
           </div>
-        {% endfor %}
+        {%- endfor -%}
       </div>
     </article>
-  </div>
-{% else %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
 
+  {%- else -%}
+    {%- comment -%} ---------- Legacy _data/cv.yml branch ---------- {%- endcomment -%}
+    <nav class="cv-nav d-flex flex-wrap mt-2 mb-2" aria-label="CV sections">
+      {%- for entry in site.data.cv -%}
+        <a href="#{{ entry.title | slugify }}" class="btn btn-sm z-depth-0 mr-2 mb-2" role="button">{{ entry.title }}</a>
+      {%- endfor -%}
+    </nav>
     <article>
       <div class="cv">
-        {% for data in site.data.resume %}
-          {% if site.jsonresume and site.jsonresume.size > 0 %}
-            {% unless site.jsonresume contains data[0] %}
-              {% continue %}
-            {% endunless %}
-          {% endif %}
-          {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
-          <a class="anchor" id="{{ data[0] }}"></a>
+        {%- for entry in site.data.cv -%}
+          <a class="anchor" id="{{ entry.title | slugify }}"></a>
           <div class="card mt-3 p-3">
-<h3 class="card-title font-weight-medium">
-  {% if data[0] == "events" %}
-    Conferences &amp; Workshops
-  {% elsif data[0] == "work" %}
-    Professional Experience
-  {% else %}
-    {{ data[0] | capitalize }}
-  {% endif %}
-</h3>          
-<div>
-              {% case data[0] %}
-                {% when 'basics' %}
-                  {% include resume/basics.liquid %}
-                {% when 'education' %}
-                  {% include resume/education.liquid %}
-                {% when 'work' %}
-                  {% include resume/work.liquid %}
-                {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
-                {% when 'projects' %}
-                  {% include resume/projects.liquid %}
-                {% when 'awards' %}
-                  {% include resume/awards.liquid %}
-                {% when 'skills' %}
-                  {% include resume/skills.liquid %}
-                {% when 'publications' %}
-                  {% include resume/publications.liquid %}
-                {% when 'languages' %}
-                  {% include resume/languages.liquid %}
-                {% when 'interests' %}
-                  {% include resume/interests.liquid %}
-                {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
-                {% when 'references' %}
-                  {% include resume/references.liquid %}
-                {% when 'events' %}
-                  {% include resume/events.liquid %}
-                {% else %}
-
-              {% endcase %}
+            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
+            <div>
+              {%- if entry.type == 'list' -%}            {%- include cv/list.liquid -%}
+              {%- elsif entry.type == 'map' -%}          {%- include cv/map.liquid -%}
+              {%- elsif entry.type == 'nested_list' -%}  {%- include cv/nested_list.liquid -%}
+              {%- elsif entry.type == 'time_table' -%}   {%- include cv/time_table.liquid -%}
+              {%- elsif entry.type == 'list_groups' -%}  {%- include cv/list_groups.liquid -%}
+              {%- else -%}                               {{ entry.contents }}
+              {%- endif -%}
             </div>
           </div>
-        {% endfor %}
+        {%- endfor -%}
       </div>
     </article>
-  </div>
-{% endunless %}
+  {%- endif -%}
+</div>

@@ -1,0 +1,84 @@
+{%- comment -%}
+  Generic renderer for custom resume.json sections (grants, visits, teaching, ...).
+  Fields (all optional): title|name, organization|institution|funder|awarder,
+  location, role, host, hostUrl, amount, url, summary, highlights (list).
+  Dates: startDate/endDate (YYYY-MM-DD; omit endDate = "Present"), or date,
+  or period (free text, e.g. "2025 - 2027").
+  Dates are shown as YYYY.MM, the same as the other CV sections.
+{%- endcomment -%}
+{%- assign today = site.time | date: '%Y-%m-%d' -%}
+<ul class="card-text font-weight-light list-group list-group-flush">
+  {%- for item in data[1] -%}
+    {%- assign heading = item.title | default: item.name -%}
+    {%- assign org = item.organization | default: item.institution | default: item.funder | default: item.awarder -%}
+
+    {%- if item.period -%}
+      {%- assign when = item.period -%}
+    {%- elsif item.startDate -%}
+      {%- assign start_fmt = item.startDate | split: '-' | slice: 0, 2 | join: '.' -%}
+      {%- if item.endDate -%}
+        {%- assign end_fmt = item.endDate | split: '-' | slice: 0, 2 | join: '.' -%}
+      {%- else -%}
+        {%- assign end_fmt = 'Present' -%}
+      {%- endif -%}
+      {%- assign when = start_fmt | append: ' - ' | append: end_fmt -%}
+    {%- elsif item.date -%}
+      {%- assign when = item.date | split: '-' | slice: 0, 2 | join: '.' -%}
+    {%- else -%}
+      {%- assign when = nil -%}
+    {%- endif -%}
+
+    <li class="list-group-item">
+      <div class="row">
+        <div class="col-xs-2 cl-sm-2 col-md-2 text-center date-column">
+          {%- if when -%}
+            <table class="table-cv">
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ when }}</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          {%- endif -%}
+        </div>
+        <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
+          <h6 class="title font-weight-bold ml-1 ml-md-4">
+            {%- if item.url -%}
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ heading }}</a>
+            {%- else -%}
+              {{ heading }}
+            {%- endif -%}
+            {%- if item.startDate and item.startDate > today -%}
+              <span class="ml-2" style="font-size: .7rem; font-weight: 500; padding: .1rem .5rem; border: 1px solid var(--global-theme-color); border-radius: 999px; color: var(--global-theme-color);">Forthcoming</span>
+            {%- endif -%}
+          </h6>
+          {%- if org or item.location -%}
+            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">
+              {{ org }}{% if org and item.location %}, {% endif %}{{ item.location }}
+            </h6>
+          {%- endif -%}
+          {%- if item.role or item.host or item.amount -%}
+            <p class="ml-1 ml-md-4 mb-1 small text-muted">
+              {{ item.role }}
+              {%- if item.host -%}
+                {% if item.role %} · {% endif %}Host:
+                {% if item.hostUrl %}<a href="{{ item.hostUrl }}" target="_blank" rel="noopener noreferrer">{{ item.host }}</a>{% else %}{{ item.host }}{% endif %}
+              {%- endif -%}
+              {%- if item.amount -%}{% if item.role or item.host %} · {% endif %}{{ item.amount }}{%- endif -%}
+            </p>
+          {%- endif -%}
+          {%- if item.summary -%}
+            <div class="ml-1 ml-md-4 mb-0">{{ item.summary | markdownify }}</div>
+          {%- endif -%}
+          {%- if item.highlights -%}
+            <ul class="ml-1 ml-md-4 items">
+              {%- for h in item.highlights -%}<li><span class="item">{{ h }}</span></li>{%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </div>
+      </div>
+    </li>
+  {%- endfor -%}
+</ul>

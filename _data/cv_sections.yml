@@ -1,0 +1,23 @@
+titles:
+  work: Professional Experience
+  visits: Research Stays & Visiting Positions
+  grants: Grants, Fellowships & Awards
+  events: Conferences, Workshops & Seminars
+  teaching: Teaching Experience
+  awards: Awards & Honours
+  publications: Publications
+  education: Education
+  skills: Skills
+  languages: Languages
+
+icons:
+  education: fa-solid fa-graduation-cap
+  work: fa-solid fa-briefcase
+  grants: fa-solid fa-award
+  visits: fa-solid fa-plane-departure
+  teaching: fa-solid fa-chalkboard-user
+  events: fa-solid fa-people-group
+  awards: fa-solid fa-trophy
+  publications: fa-solid fa-book
+  languages: fa-solid fa-language
+  skills: fa-solid fa-code

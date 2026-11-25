@@ -1,6 +1,17 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% assign events = site.data.resume.events | sort: 'date' | reverse %}
   {% for event in events %}
+    {%- comment -%} Link only if the event has a non-empty slug or url {%- endcomment -%}
+    {%- assign link = nil -%}
+    {%- if event.url and event.url != "" -%}
+      {%- assign link = event.url -%}
+    {%- elsif event.slug and event.slug != "" -%}
+      {%- assign last_char = event.slug | slice: -1 -%}
+      {%- assign path = '/blog/' | append: event.slug -%}
+      {%- if last_char != '/' -%}{%- assign path = path | append: '/' -%}{%- endif -%}
+      {%- assign link = path | relative_url -%}
+    {%- endif -%}
+
     <li class="list-group-item">
       <div class="row">
         <!-- Date + Location Column -->
@@ -19,7 +30,6 @@
                   </span>
                 </td>
               </tr>
-
               {% if event.location %}
                 <tr>
                   <td>
@@ -36,20 +46,14 @@
 
         <!-- Content Column -->
         <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
-          <!-- Title with link -->
-          {% if event.slug != "" %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4">
-              <a href="{{ '/blog/' | append: event.slug | relative_url }}">
-                {{ event.title }}
-              </a>
-            </h6>
-          {% else %}
-            <h6 class="title font-weight-bold ml-1 ml-md-4">
+          <h6 class="title font-weight-bold ml-1 ml-md-4">
+            {%- if link -%}
+              <a href="{{ link }}">{{ event.title }}</a>
+            {%- else -%}
               {{ event.title }}
-            </h6>
-          {% endif %}
+            {%- endif -%}
+          </h6>
 
-          <!-- Italics + bold line for event + organizer -->
           {% if event.event %}
             <p class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic;">
               {{ event.event }}
